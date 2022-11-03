@@ -5,11 +5,11 @@ desmosOptions = {
 const desmos2Dcalc = Desmos.GraphingCalculator(desmosCalcDiv, desmosOptions);
 
 // globals, store state for both GeoGebra and Desmos
-let g_m = 0;
-let g_A = 0;
-let g_B = 0;
-let g_C = 0;
-let g_D = 0;
+let m = 0;
+let A = 0;
+let B = 0;
+let C = 0;
+let D = 0;
 
 // consts
 a = 2;
@@ -42,6 +42,7 @@ params.appletOnLoad = function(api) {
 
 	// set initial global state
 	updateGlobalStateFromGeoGebra();
+	updateDesmos2DFromGlobalState();
 	printGlobalState();
 }
 
@@ -51,21 +52,43 @@ window.addEventListener("load", function() {
 });
 
 function printGlobalState() {
-	console.log(`global state: m:${g_m} A:${g_A} B:${g_B} C:${g_C}`);
+	console.log(`global state: m:${m} A:${A} B:${B} C:${C} D:${D}`);
 }
 
 function updateGlobalStateFromGeoGebra() {
-	g_m = ggbApplet.getValue("m");
-	g_A = ggbApplet.getValue("a");
-	g_B = ggbApplet.getValue("b");
-	g_C = ggbApplet.getValue("c");
-	g_D = ggbApplet.getValue("d");
+	m = ggbApplet.getValue("m");
+	A = ggbApplet.getValue("a");
+	B = ggbApplet.getValue("b");
+	C = ggbApplet.getValue("c");
+	D = ggbApplet.getValue("d");
 }
 
 function updateDesmos2DFromGlobalState() {
+	// set coefficients
+	// formula from from www.onemathematicalcat.org
+	// x2(c2m2−a2)+xy(−2ab)+y2(c2m2−b2)+x(2ad)+y(2bd)−d2=0
+	xx = C * C * m * m - A * A;
+	xy = -2 * A * B;
+	yy = C * C * m * m - B * B;
+	x = 2 * A * D;
+	y = 2 * B * D;
+	c = -2 * D;
 
+	// conic section
+	conic_function_str = `0>=
+	 ${xx}x^2 +
+	 ${xy}xy +
+	 ${yy}y^2 +
+	 ${x}x +
+	 ${y}y +
+	 ${c}`
+
+	desmos2Dcalc.setExpression({ id: 'graph1', latex: conic_function_str });
+
+	console.log('updated 2d graph');
 }
 
 function ggListener(objName) {
 	updateGlobalStateFromGeoGebra();
+	updateDesmos2DFromGlobalState();
 }
