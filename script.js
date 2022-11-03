@@ -11,25 +11,6 @@ let B = 0;
 let C = 0;
 let D = 0;
 
-// consts
-a = 2;
-b = 10;
-c = 5;
-d = 0;
-e = 0;
-f = 0;
-
-// conic section
-conic_function_str = `y>=
- ${a}x^2 +
- ${b}xy +
- ${c}y^2 +
- ${d}x +
- ${e}y +
- ${f}`
-
-desmos2Dcalc.setExpression({ id: 'graph1', latex: conic_function_str });
-
 // GeoGebra
 var params = { "appName": "3d", "width": 800, "height": 600, "showToolBar": false, "showAlgebraInput": false, "showMenuBar": false, "material_id": "resj9ngr" };
 params.appletOnLoad = function(api) {
