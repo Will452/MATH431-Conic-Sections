@@ -1,4 +1,12 @@
 html, body {
+	display:	flex;
   height: 100%;
   width: 100%;
 }
+
+#desmos2Dcalc {
+	width: 600px; 
+	height: 400px;
+	border: 0px;
+}
+

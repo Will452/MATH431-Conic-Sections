@@ -1,10 +1,12 @@
-Visualizing conic sections
-[https://math431-conic-sections.williamivanov.repl.co/](https://math431-conic-sections.williamivanov.repl.co/)
+Visualizing conic sections   
+[https://math431-conic-sections.williamivanov.repl.co/](https://math431-conic-sections.williamivanov.repl.co/)  
+GeoGebra graph: [https://www.geogebra.org/m/resj9ngr](https://www.geogebra.org/m/resj9ngr)  
 
 # TODO:
 ### core functionality
 ~~add Desmos 2d graph~~ 11/2  
-add GeoGebra conic  
+~~add GeoGebra conic~~ 11/3  
+geogebra changes should be reflected in demos graph https://geogebra.github.io/integration/example-api-listeners.html
 add slider UI  
 sliders modify graphs  
 ### essential styling
@@ -14,5 +16,6 @@ add license
 descriptive readme.md  
 
 # resources
-[Desmos API](https://www.desmos.com/api/v1.7/docs/index.html)
-[Conic sections guide](https://www.onemathematicalcat.org/Math/Precalculus_obj/conicStuffWhy.htm)
+[Desmos API](https://www.desmos.com/api/v1.7/docs/index.html)  
+[GeoGebra API](https://wiki.geogebra.org/en/Reference:GeoGebra_Apps_API#Construction_.2F_User_Interface)
+[Conic sections guide](https://www.onemathematicalcat.org/Math/Precalculus_obj/conicStuffWhy.htm)  
