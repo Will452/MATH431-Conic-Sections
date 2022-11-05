@@ -53,7 +53,7 @@ function updateDesmos2DFromGlobalState() {
 	yy = C * C * m * m - B * B;
 	x = 2 * A * D;
 	y = 2 * B * D;
-	c = -2 * D;
+	c = -D * D;
 
 	// conic section
 	conic_function_str = `0>=
